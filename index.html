@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="invoice-container">
+            <div class="invoice-header">
+                <h1>Invoice Generator</h1>
+                <div class="invoice-info">
+                    <div class="date-section">
+                        <label for="invoiceDate">Date:</label>
+                        <input type="date" id="invoiceDate">
+                        <label for="invoiceNumber">Invoice #:</label>
+                        <input type="text" id="invoiceNumber" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="business-details">
+                <div class="from-section">
+                    <h3>Seller Details:</h3>
+                    <div class="details-grid">
+                        <div class="form-group">
+                            <label for="sellerName">Name:</label>
+                            <input type="text" id="sellerName" placeholder="Company/Individual Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellerEmail">Email:</label>
+                            <input type="email" id="sellerEmail" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellerContact">Contact:</label>
+                            <input type="tel" id="sellerContact" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="sellerAddress">Address:</label>
+                            <textarea id="sellerAddress" placeholder="Full Address"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="to-section">
+                    <h3>Client Details:</h3>
+                    <div class="details-grid">
+                        <div class="form-group">
+                            <label for="clientName">Name:</label>
+                            <input type="text" id="clientName" placeholder="Client Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Email:</label>
+                            <input type="email" id="clientEmail" placeholder="client@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientContact">Contact:</label>
+                            <input type="tel" id="clientContact" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientAddress">Address:</label>
+                            <textarea id="clientAddress" placeholder="Full Address"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items-section">
+                <table id="invoiceItems">
+                    <thead>
+                        <tr>
+                            <th>Item Description</th>
+                            <th>Quantity</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemsTableBody"></tbody>
+                </table>
+                <button id="addItem" class="btn-add">Add Item</button>
+            </div>
+
+            <div class="totals-section">
+                <div class="calculations">
+                    <div class="amount-group">
+                        <label>Subtotal:</label>
+                        <span id="subtotal">0.00</span>
+                    </div>
+                    <div class="amount-group">
+                        <label>Tax Rate (%):</label>
+                        <input type="number" id="taxRate" value="0" min="0" max="100">
+                    </div>
+                    <div class="amount-group">
+                        <label>Tax Amount:</label>
+                        <span id="taxAmount">0.00</span>
+                    </div>
+                    <div class="amount-group total">
+                        <label>Total:</label>
+                        <span id="total">0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" placeholder="Additional notes or payment terms..."></textarea>
+            </div>
+
+            <div class="action-buttons">
+                <button id="saveInvoice" class="btn-save">Save Invoice</button>
+                <button id="printInvoice" class="btn-print">Print Invoice</button>
+                <button id="clearInvoice" class="btn-clear">Clear All</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
